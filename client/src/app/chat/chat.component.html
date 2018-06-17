@@ -31,6 +31,9 @@
                (keyup.enter)="sendMessage(messageContent)">
         <mat-hint align="end">{{inputMessage.value.length}}/140</mat-hint>
       </mat-form-field>
+      <button mat-fab class="alcumus-primary" (click)="sendMessage(messageContent)">
+        <mat-icon>send</mat-icon>
+      </button>
     </div>
   </mat-card>
 </div>

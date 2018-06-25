@@ -1,0 +1,27 @@
+mat-sidenav {
+    min-width: 250px;
+}
+
+mat-panel-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    position: relative;
+    height: inherit;
+    span.mat-line {
+        font-size: 16px;
+        padding: 0 16px;
+    }
+
+}
+
+mat-expansion-panel {
+    a.mat-list-item {
+        span.mat-line {
+            text-align: center;
+            font-size: 15px;
+        }
+
+    }
+}

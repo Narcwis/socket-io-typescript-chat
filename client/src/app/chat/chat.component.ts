@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChildren, ViewChild, AfterViewInit, QueryList, ElementRef, TemplateRef } from '@angular/core';
-import { MatDialog, MatDialogRef, MatList, MatListItem } from '@angular/material';
+import { MatDialog, MatDialogRef, MatList, MatListItem, MatInput } from '@angular/material';
 
 import { Action } from './shared/model/action';
 import { Event } from './shared/model/event';
@@ -10,6 +10,7 @@ import { DialogUserComponent } from './dialog-user/dialog-user.component';
 import { DialogUserType } from './dialog-user/dialog-user-type';
 import { AuthService } from '../auth/auth.service';
 import { DialogInfoComponent } from './dialog-info/dialog-info.component';
+import { EmojiEvent } from '@ctrl/ngx-emoji-mart/ngx-emoji/public_api';
 
 
 const AVATAR_URL = 'https://api.adorable.io/avatars/285';
@@ -21,6 +22,7 @@ const AVATAR_URL = 'https://api.adorable.io/avatars/285';
 })
 
 export class ChatComponent implements OnInit, AfterViewInit {
+    public showEmoji = false;
     action = Action;
     user: User;
     messages: Message[] = [];
@@ -57,6 +59,15 @@ export class ChatComponent implements OnInit, AfterViewInit {
         this.matListItems.changes.subscribe(elements => {
             this.scrollToBottom();
         });
+    }
+
+    public addEmoji(emoji: EmojiEvent): void {
+        console.log(emoji);
+        if (this.messageContent === undefined || this.messageContent === null) {
+            this.messageContent = emoji.emoji.native;
+        } else {
+            this.messageContent += emoji.emoji.native;
+        }
     }
 
     private checkIfLoggedin(): void {
@@ -148,7 +159,10 @@ export class ChatComponent implements OnInit, AfterViewInit {
     }
 
     public sendMessage(message: string): void {
+        this.showEmoji = false;
+        console.log(message);
         if (!message) {
+            console.log('message is null');
             return;
         }
 

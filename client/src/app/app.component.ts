@@ -5,9 +5,11 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'tcc-app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+    public channelName = '#GeneralDev';
 
     constructor(public auth: AuthService, public router: Router) {
         auth.handleAuthentication();
@@ -16,8 +18,13 @@ export class AppComponent {
     public logout(): void {
         this.auth.logout();
     }
+
     public login(): void {
         this.auth.login();
+    }
+
+    public selectChannel(channelName: string): void {
+        this.channelName = channelName;
     }
 
     public isLoggedIn(): boolean {

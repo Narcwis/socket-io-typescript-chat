@@ -21,16 +21,26 @@
       </mat-list-item>
     </mat-list>
     <div class="chat-footer-container">
-      <mat-icon>message</mat-icon>
-      <mat-form-field class="chat-input">
-        <input matInput 
-               #inputMessage 
-               maxlength="140" 
-               placeholder="Type your message" 
-               [(ngModel)]="messageContent" 
-               (keyup.enter)="sendMessage(messageContent)">
-        <mat-hint align="end">{{inputMessage.value.length}}/140</mat-hint>
-      </mat-form-field>
+        <div class="emoji">
+            <mat-icon (click)="showEmoji ? showEmoji = false : showEmoji = true" >insert_emoticon</mat-icon>
+            <emoji-mart (emojiClick)="addEmoji($event)" [hidden]="!showEmoji" [style]="{ position: 'absolute', bottom: '70px' }" title="Pick your emoji…" emoji="point_up"></emoji-mart>
+        </div>
+        <div class="text-input">
+            <mat-form-field class="chat-input">
+                <input matInput 
+                    #inputMessage 
+                    maxlength="140" 
+                    placeholder="Type your message" 
+                    [(ngModel)]="messageContent" 
+                    (keyup.enter)="sendMessage(messageContent)">
+                <mat-hint align="end">{{inputMessage.value.length}}/140</mat-hint>
+            </mat-form-field>
+        </div>
+        <div class="chat-send">
+            <button mat-fab class="alcumus-primary" (click)="sendMessage(messageContent)">
+                <mat-icon>send</mat-icon>
+            </button>
+        </div>
     </div>
   </mat-card>
 </div>

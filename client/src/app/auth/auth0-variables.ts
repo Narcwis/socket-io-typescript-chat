@@ -17,7 +17,7 @@ export const AUTH_CONFIG: AuthConfig = {
     domain: 'alcumus-chat.eu.auth0.com',
     localCallbackURL: 'https://localhost:4200/callback',
     hostedCallbackURL: 'https://alcumus-chat.firebaseapp.com/callback',
-    environment: Environment.Local,
+    environment: Environment.Hosted,
     getCallBackURL(): string {
         if (this.environment === Environment.Local) {
             return this.localCallbackURL;

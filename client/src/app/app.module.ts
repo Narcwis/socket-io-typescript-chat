@@ -18,23 +18,23 @@ import { SharedModule } from './shared/shared.module';
 import { environment } from 'environments/environment.prod';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CallbackComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    SharedModule,
-    BrowserAnimationsModule,
-    HttpModule,
-    ChatModule,
-    ServiceWorkerModule.register('/ngsw-worker.js', {
-      enabled: environment.production
-    }),
-    RouterModule.forRoot(ROUTES)
-  ],
-  providers: [AuthService],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        CallbackComponent
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        SharedModule,
+        BrowserAnimationsModule,
+        HttpModule,
+        ChatModule,
+        ServiceWorkerModule.register('/ngsw-worker.js', {
+            enabled: environment.production
+        }),
+        RouterModule.forRoot(ROUTES)
+    ],
+    providers: [AuthService],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

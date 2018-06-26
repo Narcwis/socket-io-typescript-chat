@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './auth/auth.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'tcc-app-root',
@@ -11,7 +10,7 @@ export class AppComponent {
 
     public channelName = '#GeneralDev';
 
-    constructor(public auth: AuthService, public router: Router) {
+    constructor(public auth: AuthService) {
         auth.handleAuthentication();
     }
 

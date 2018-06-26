@@ -61,7 +61,7 @@ Now open your browser in following URL: [http://localhost:4200](http://localhost
 Contributions are greatly appreciated.
 
 # Contributors
-[<img alt="narcwis" src="https://avatars0.githubusercontent.com/u/9106275?s=460&v=4" width="117">](https://github.com/narcwis) |
+[<img alt="narcwis" src="https://avatars0.githubusercontent.com/u/9106275?s=460&v=4" width="117">](https://github.com/narcwis)
 
 ## License
 

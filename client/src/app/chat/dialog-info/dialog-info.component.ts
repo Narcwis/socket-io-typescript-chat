@@ -4,7 +4,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 @Component({
   selector: 'tcc-dialog-info',
   templateUrl: './dialog-info.component.html',
-  styleUrls: ['./dialog-info.component.css']
+  styleUrls: ['./dialog-info.component.scss']
 })
 export class DialogInfoComponent {
 

@@ -15,7 +15,7 @@ import { EmojiEvent } from '@ctrl/ngx-emoji-mart/ngx-emoji/public_api';
 @Component({
     selector: 'tcc-chat',
     templateUrl: './chat.component.html',
-    styleUrls: ['./chat.component.css']
+    styleUrls: ['./chat.component.scss']
 })
 
 export class ChatComponent implements OnInit, AfterViewInit {

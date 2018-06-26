@@ -12,9 +12,6 @@ import { AuthService } from '../auth/auth.service';
 import { DialogInfoComponent } from './dialog-info/dialog-info.component';
 import { EmojiEvent } from '@ctrl/ngx-emoji-mart/ngx-emoji/public_api';
 
-
-const AVATAR_URL = 'https://api.adorable.io/avatars/285';
-
 @Component({
     selector: 'tcc-chat',
     templateUrl: './chat.component.html',
